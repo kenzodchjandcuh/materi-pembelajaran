@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Pembelajaran Coding</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Materi Pembelajaran Coding</h1>
+        <nav>
+            <ul>
+                <li><a href="#cpp">C++</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#js">JavaScript</a></li>
+                <li><a href="#php">PHP</a></li>
+                <li><a href="#developer">Profil Pengembang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cpp">
+            <h2>Pengenalan Lengkap C++</h2>
+            <p>C++ adalah bahasa pemrograman yang dikembangkan oleh Bjarne Stroustrup pada tahun 1979 sebagai ekstensi dari bahasa C. Nama "C++" berasal dari operator increment (++) di C, yang menunjukkan bahwa C++ adalah versi yang "diperbaiki" dari C. C++ dirilis secara resmi pada tahun 1983 dan telah menjadi salah satu bahasa pemrograman paling populer dan kuat di dunia.</p>
+            
+            <h3>Sejarah dan Evolusi C++</h3>
+            <p>C++ awalnya dikembangkan untuk memungkinkan pemrograman berorientasi objek sambil mempertahankan efisiensi dan fleksibilitas bahasa C. Seiring waktu, C++ telah berkembang melalui beberapa standar:</p>
+            <ul>
+                <li><strong>C++98</strong>: Standar pertama yang diterbitkan oleh ISO.</li>
+                <li><strong>C++03</strong>: Revisi minor dari C++98.</li>
+                <li><strong>C++11</strong>: Pembaruan besar dengan fitur-fitur modern seperti auto, lambda, dan smart pointers.</li>
+                <li><strong>C++14, C++17, C++20</strong>: Pembaruan berkelanjutan dengan fitur-fitur baru.</li>
+            </ul>
+            
+            <h3>Fitur Utama C++</h3>
+            <p>C++ mendukung beberapa paradigma pemrograman:</p>
+            <ul>
+                <li><strong>Pemrograman Prosedural</strong>: Mirip dengan C, menggunakan fungsi dan prosedur.</li>
+                <li><strong>Pemrograman Berorientasi Objek</strong>: Mendukung class, inheritance, polymorphism, encapsulation.</li>
+                <li><strong>Pemrograman Generic</strong>: Menggunakan template untuk kode yang dapat digunakan ulang.</li>
+                <li><strong>Metaprogramming</strong>: Kemampuan untuk menulis kode yang menghasilkan kode lainnya.</li>
+            </ul>
+            
+            <h3>Keunggulan C++</h3>
+            <ul>
+                <li><strong>Performa Tinggi</strong>: Dekat dengan hardware, cocok untuk aplikasi yang membutuhkan kecepatan.</li>
+                <li><strong>Kontrol Memori</strong>: Programmer memiliki kontrol penuh atas manajemen memori.</li>
+                <li><strong>Portabilitas</strong>: Kode C++ dapat dikompilasi di berbagai platform.</li>
+                <li><strong>Libraries Kaya</strong>: Standard Template Library (STL) menyediakan struktur data dan algoritma siap pakai.</li>
+                <li><strong>Komunitas Besar</strong>: Banyak dukungan dan sumber belajar.</li>
+            </ul>
+            
+            <h3>Kekurangan C++</h3>
+            <ul>
+                <li><strong>Kompleksitas</strong>: Kurva belajar yang curam, terutama untuk pemula.</li>
+                <li><strong>Manajemen Memori Manual</strong>: Rentan terhadap memory leaks dan bugs jika tidak hati-hati.</li>
+                <li><strong>Verbose</strong>: Kode sering lebih panjang dibanding bahasa lain.</li>
+            </ul>
+            
+            <h3>Contoh Kode C++ Sederhana</h3>
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+            <p>Kode di atas adalah program "Hello, World!" klasik yang mencetak teks ke konsol.</p>
+            
+            <h3>Contoh Kode C++ dengan Class (OOP)</h3>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Mahasiswa {
+private:
+    string nama;
+    int umur;
+public:
+    Mahasiswa(string n, int u) {
+        nama = n;
+        umur = u;
+    }
+    
+    void tampilkanInfo() {
+        cout &lt;&lt; "Nama: " &lt;&lt; nama &lt;&lt; endl;
+        cout &lt;&lt; "Umur: " &lt;&lt; umur &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Mahasiswa mhs("John Doe", 20);
+    mhs.tampilkanInfo();
+    return 0;
+}</code></pre>
+            <p>Contoh di atas menunjukkan penggunaan class dalam C++ untuk membuat objek Mahasiswa.</p>
+            
+            <h3>Template dalam C++</h3>
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+T maksimum(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    cout &lt;&lt; "Maksimum int: " &lt;&lt; maksimum(5, 10) &lt;&lt; endl;
+    cout &lt;&lt; "Maksimum double: " &lt;&lt; maksimum(3.14, 2.71) &lt;&lt; endl;
+    return 0;
+}</code></pre>
+            <p>Template memungkinkan fungsi maksimum bekerja dengan berbagai tipe data.</p>
+            
+            <h3>Penggunaan STL (Standard Template Library)</h3>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; angka = {3, 1, 4, 1, 5, 9, 2, 6};
+    
+    cout &lt;&lt; "Angka sebelum sorting: ";
+    for(int n : angka) cout &lt;&lt; n &lt;&lt; " ";
+    cout &lt;&lt; endl;
+    
+    sort(angka.begin(), angka.end());
+    
+    cout &lt;&lt; "Angka setelah sorting: ";
+    for(int n : angka) cout &lt;&lt; n &lt;&lt; " ";
+    cout &lt;&lt; endl;
+    
+    return 0;
+}</code></pre>
+            <p>STL menyediakan container seperti vector dan algoritma seperti sort.</p>
+            
+            <h3>Kompilasi dan Eksekusi C++</h3>
+            <p>Untuk menjalankan program C++, Anda perlu compiler seperti g++ (untuk GCC) atau Visual C++. Contoh kompilasi:</p>
+            <pre><code>g++ program.cpp -o program
+./program</code></pre>
+            
+            <h3>Aplikasi C++</h3>
+            <p>C++ digunakan dalam berbagai bidang:</p>
+            <ul>
+                <li><strong>Game Development</strong>: Engine seperti Unreal Engine.</li>
+                <li><strong>System Programming</strong>: OS, driver, embedded systems.</li>
+                <li><strong>Aplikasi Desktop</strong>: Software seperti Adobe Photoshop.</li>
+                <li><strong>High-Performance Computing</strong>: Simulasi ilmiah, AI.</li>
+                <li><strong>Web Servers</strong>: Beberapa server web seperti Apache menggunakan C++.</li>
+            </ul>
+        </section>
+
+        <section id="html">
+            <h2>Pengenalan Lengkap HTML</h2>
+            <p>HTML (HyperText Markup Language) adalah bahasa markup standar yang digunakan untuk membuat dan merancang halaman web. HTML bukanlah bahasa pemrograman, melainkan bahasa markup yang menggunakan tag untuk mendefinisikan struktur dan konten halaman web. HTML dikembangkan oleh Tim Berners-Lee pada tahun 1991 dan telah berkembang melalui berbagai versi hingga HTML5 saat ini.</p>
+            
+            <h3>Sejarah HTML</h3>
+            <ul>
+                <li><strong>HTML 1.0 (1991)</strong>: Versi awal yang sederhana.</li>
+                <li><strong>HTML 2.0 (1995)</strong>: Standar pertama dari IETF.</li>
+                <li><strong>HTML 3.2 (1997)</strong>: Menambahkan dukungan untuk tabel dan scripting.</li>
+                <li><strong>HTML 4.01 (1999)</strong>: Versi stabil dengan fokus pada semantic markup.</li>
+                <li><strong>XHTML (2000)</strong>: Versi XML-compliant dari HTML.</li>
+                <li><strong>HTML5 (2014)</strong>: Versi terbaru dengan fitur multimedia dan semantic elements.</li>
+            </ul>
+            
+            <h3>Struktur Dasar HTML</h3>
+            <p>Setiap dokumen HTML dimulai dengan DOCTYPE declaration, diikuti oleh elemen &lt;html&gt;, &lt;head&gt;, dan &lt;body&gt;.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Heading Utama&lt;/h1&gt;
+    &lt;p&gt;Konten paragraf.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            
+            <h3>Elemen HTML Penting</h3>
+            <h4>Heading (h1-h6)</h4>
+            <p>Heading digunakan untuk judul dan subjudul. h1 adalah yang paling penting, h6 yang paling tidak penting.</p>
+            <div class="code-example">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+            </div>
+            
+            <h4>Paragraf dan Teks</h4>
+            <pre><code>&lt;p&gt;Ini adalah paragraf.&lt;/p&gt;
+&lt;br&gt;  &lt;!-- Line break --&gt;
+&lt;hr&gt;  &lt;!-- Horizontal rule --&gt;
+&lt;strong&gt;teks tebal&lt;/strong&gt;
+&lt;em&gt;teks miring&lt;/em&gt;</code></pre>
+            
+            <h4>Link dan Navigasi</h4>
+            <pre><code>&lt;a href="https://example.com"&gt;Link ke website&lt;/a&gt;
+&lt;a href="#section"&gt;Link ke bagian dalam halaman&lt;/a&gt;</code></pre>
+            
+            <h4>List</h4>
+            <pre><code>&lt;!-- Unordered list --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Langkah pertama&lt;/li&gt;
+    &lt;li&gt;Langkah kedua&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            
+            <h4>Tabel</h4>
+            <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Data 1&lt;/td&gt;
+            &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            
+            <h4>Form</h4>
+            <pre><code>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="nama"&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama"&gt;
+    &lt;input type="submit" value="Kirim"&gt;
+&lt;/form&gt;</code></pre>
+            
+            <h3>Semantic HTML (HTML5)</h3>
+            <p>HTML5 memperkenalkan elemen semantic yang memberikan makna struktural pada konten:</p>
+            <ul>
+                <li><code>&lt;header&gt;</code>: Header halaman atau section</li>
+                <li><code>&lt;nav&gt;</code>: Navigasi</li>
+                <li><code>&lt;main&gt;</code>: Konten utama</li>
+                <li><code>&lt;section&gt;</code>: Section konten</li>
+                <li><code>&lt;article&gt;</code>: Artikel independen</li>
+                <li><code>&lt;aside&gt;</code>: Konten samping</li>
+                <li><code>&lt;footer&gt;</code>: Footer halaman</li>
+            </ul>
+            
+            <h3>Multimedia dalam HTML5</h3>
+            <h4>Audio dan Video</h4>
+            <pre><code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Browser Anda tidak mendukung audio.
+&lt;/audio&gt;
+
+&lt;video controls width="320" height="240"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Browser Anda tidak mendukung video.
+&lt;/video&gt;</code></pre>
+            
+            <h4>Gambar</h4>
+            <pre><code>&lt;img src="gambar.jpg" alt="Deskripsi gambar" width="300" height="200"&gt;</code></pre>
+            
+            <h3>Atribut HTML</h3>
+            <p>Atribut memberikan informasi tambahan tentang elemen:</p>
+            <ul>
+                <li><code>id</code>: Identifier unik untuk elemen</li>
+                <li><code>class</code>: Class untuk styling CSS</li>
+                <li><code>style</code>: Inline CSS</li>
+                <li><code>title</code>: Tooltip</li>
+                <li><code>alt</code>: Teks alternatif untuk gambar</li>
+            </ul>
+            
+            <h3>Best Practices HTML</h3>
+            <ul>
+                <li>Gunakan semantic HTML untuk accessibility dan SEO</li>
+                <li>Validasi HTML menggunakan validator W3C</li>
+                <li>Gunakan lowercase untuk tag dan atribut</li>
+                <li>Tutup semua tag yang terbuka</li>
+                <li>Gunakan alt text untuk gambar</li>
+                <li>Pastikan struktur yang logis</li>
+            </ul>
+            
+            <h3>Contoh Halaman HTML Lengkap</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Contoh Halaman Web&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Selamat Datang&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;Tentang&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section id="home"&gt;
+            &lt;h2&gt;Home&lt;/h2&gt;
+            &lt;p&gt;Ini adalah halaman home.&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="about"&gt;
+            &lt;h2&gt;Tentang Kami&lt;/h2&gt;
+            &lt;p&gt;Kami adalah perusahaan teknologi.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 Nama Perusahaan&lt;/p&gt;
+    &lt;/footer&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section id="css">
+            <h2>Pengenalan Lengkap CSS</h2>
+            <p>CSS (Cascading Style Sheets) adalah bahasa stylesheet yang digunakan untuk menggambarkan presentasi dokumen yang ditulis dalam HTML atau XML. CSS menggambarkan bagaimana elemen-elemen HTML harus ditampilkan di layar, kertas, atau media lainnya. CSS dikembangkan oleh W3C (World Wide Web Consortium) dan pertama kali dirilis pada tahun 1996.</p>
+            
+            <h3>Sejarah CSS</h3>
+            <ul>
+                <li><strong>CSS1 (1996)</strong>: Versi pertama dengan basic styling.</li>
+                <li><strong>CSS2 (1998)</strong>: Menambahkan positioning dan media types.</li>
+                <li><strong>CSS2.1 (2004)</strong>: Revisi dari CSS2.</li>
+                <li><strong>CSS3 (2011+)</strong>: Modular dengan fitur-fitur canggih seperti animations, flexbox, grid.</li>
+            </ul>
+            
+            <h3>Cara Menggunakan CSS</h3>
+            <h4>1. Inline CSS</h4>
+            <pre><code>&lt;p style="color: red; font-size: 20px;"&gt;Teks ini berwarna merah&lt;/p&gt;</code></pre>
+            
+            <h4>2. Internal CSS</h4>
+            <pre><code>&lt;style&gt;
+p {
+    color: blue;
+    font-family: Arial;
+}
+&lt;/style&gt;</code></pre>
+            
+            <h4>3. External CSS (Recommended)</h4>
+            <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+            
+            <h3>Selector CSS</h3>
+            <h4>Basic Selectors</h4>
+            <ul>
+                <li><strong>Element Selector</strong>: <code>p { color: red; }</code></li>
+                <li><strong>Class Selector</strong>: <code>.classname { font-size: 14px; }</code></li>
+                <li><strong>ID Selector</strong>: <code>#idname { background-color: yellow; }</code></li>
+                <li><strong>Universal Selector</strong>: <code>* { margin: 0; }</code></li>
+            </ul>
+            
+            <h4>Combinator Selectors</h4>
+            <ul>
+                <li><strong>Descendant</strong>: <code>div p { color: blue; }</code></li>
+                <li><strong>Child</strong>: <code>ul > li { list-style: none; }</code></li>
+                <li><strong>Adjacent Sibling</strong>: <code>h1 + p { margin-top: 0; }</code></li>
+                <li><strong>General Sibling</strong>: <code>h1 ~ p { color: gray; }</code></li>
+            </ul>
+            
+            <h4>Pseudo-classes dan Pseudo-elements</h4>
+            <pre><code>a:hover { color: red; }          /* Pseudo-class */
+p::first-line { font-weight: bold; } /* Pseudo-element */</code></pre>
+            
+            <h3>Box Model</h3>
+            <p>Setiap elemen HTML direpresentasikan sebagai rectangular box dengan:</p>
+            <ul>
+                <li><strong>Content</strong>: Konten aktual</li>
+                <li><strong>Padding</strong>: Ruang di sekitar konten</li>
+                <li><strong>Border</strong>: Garis di sekitar padding</li>
+                <li><strong>Margin</strong>: Ruang di luar border</li>
+            </ul>
+            <pre><code>.box {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}</code></pre>
+            
+            <h3>Layout dengan CSS</h3>
+            <h4>Display Property</h4>
+            <ul>
+                <li><code>block</code>: Elemen mengambil lebar penuh, line break sebelum dan sesudah</li>
+                <li><code>inline</code>: Elemen mengambil lebar sesuai konten, tidak ada line break</li>
+                <li><code>inline-block</code>: Kombinasi block dan inline</li>
+                <li><code>none</code>: Elemen disembunyikan</li>
+                <li><code>flex</code>: Menggunakan Flexbox</li>
+                <li><code>grid</code>: Menggunakan CSS Grid</li>
+            </ul>
+            
+            <h4>Positioning</h4>
+            <ul>
+                <li><code>static</code>: Default positioning</li>
+                <li><code>relative</code>: Posisi relatif terhadap posisi normal</li>
+                <li><code>absolute</code>: Posisi absolut terhadap ancestor positioned</li>
+                <li><code>fixed</code>: Posisi fixed terhadap viewport</li>
+                <li><code>sticky</code>: Sticky positioning</li>
+            </ul>
+            
+            <h3>Flexbox</h3>
+            <p>Flexbox adalah layout model satu dimensi untuk mendistribusikan space dan menyelaraskan item.</p>
+            <pre><code>.container {
+    display: flex;
+    justify-content: space-between; /* horizontal alignment */
+    align-items: center; /* vertical alignment */
+}
+
+.item {
+    flex: 1; /* grow factor */
+}</code></pre>
+            
+            <h3>CSS Grid</h3>
+            <p>CSS Grid adalah layout system dua dimensi untuk web.</p>
+            <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+}</code></pre>
+            
+            <h3>Responsive Design</h3>
+            <h4>Media Queries</h4>
+            <pre><code>@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+            
+            <h4>Viewport Meta Tag</h4>
+            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+            
+            <h3>Animations dan Transitions</h3>
+            <h4>Transitions</h4>
+            <pre><code>.button {
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: blue;
+}</code></pre>
+            
+            <h4>Keyframes Animation</h4>
+            <pre><code>@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.element {
+    animation: slideIn 1s ease-in-out;
+}</code></pre>
+            
+            <h3>CSS Variables (Custom Properties)</h3>
+            <pre><code>:root {
+    --primary-color: #007bff;
+    --font-size: 16px;
+}
+
+.element {
+    color: var(--primary-color);
+    font-size: var(--font-size);
+}</code></pre>
+            
+            <h3>Best Practices CSS</h3>
+            <ul>
+                <li>Gunakan external CSS untuk maintainability</li>
+                <li>Ikuti konvensi penamaan yang konsisten (BEM, SMACSS)</li>
+                <li>Minimize specificity conflicts</li>
+                <li>Gunakan CSS variables untuk konsistensi</li>
+                <li>Optimalkan untuk performance (minify, compress)</li>
+                <li>Test di berbagai browser</li>
+            </ul>
+            
+            <h3>Contoh Styling Lengkap</h3>
+            <div class="css-example">
+                <p class="styled-text">Teks ini telah di-styling dengan CSS.</p>
+                <button class="styled-button">Tombol Styled</button>
+            </div>
+            <pre><code>.styled-text {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.styled-button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.styled-button:hover {
+    transform: scale(1.05);
+}</code></pre>
+        </section>
+
+        <section id="js">
+            <h2>Pengenalan Lengkap JavaScript</h2>
+            <p>JavaScript adalah bahasa pemrograman tingkat tinggi, interpreted, dan multiparadigm yang dikembangkan oleh Brendan Eich pada tahun 1995 untuk Netscape Navigator. JavaScript awalnya bernama Mocha, lalu LiveScript, dan akhirnya JavaScript. Meskipun namanya mirip dengan Java, keduanya adalah bahasa yang berbeda. JavaScript adalah bahasa pemrograman yang paling banyak digunakan di dunia dan merupakan salah satu teknologi inti web modern.</p>
+            
+            <h3>Sejarah JavaScript</h3>
+            <ul>
+                <li><strong>1995</strong>: Dibuat oleh Brendan Eich dalam 10 hari</li>
+                <li><strong>1997</strong>: ECMAScript 1 (standarisasi)</li>
+                <li><strong>2009</strong>: Node.js lahir, JS bisa berjalan di server</li>
+                <li><strong>2015</strong>: ES6/ES2015 dengan fitur modern</li>
+                <li><strong>2020+ </strong>: Update tahunan ES2020, ES2021, dll.</li>
+            </ul>
+            
+            <h3>Cara Menggunakan JavaScript</h3>
+            <h4>1. Inline JavaScript</h4>
+            <pre><code>&lt;button onclick="alert('Hello!')"&gt;Klik&lt;/button&gt;</code></pre>
+            
+            <h4>2. Internal JavaScript</h4>
+            <pre><code>&lt;script&gt;
+function sayHello() {
+    alert('Hello, World!');
+}
+&lt;/script&gt;</code></pre>
+            
+            <h4>3. External JavaScript (Recommended)</h4>
+            <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+            
+            <h3>Variabel dan Tipe Data</h3>
+            <h4>Declaration</h4>
+            <pre><code>var oldWay = "deprecated";     // var (global scope)
+let modern = "recommended";     // let (block scope)
+const constant = "immutable";    // const (block scope, immutable)</code></pre>
+            
+            <h4>Tipe Data</h4>
+            <ul>
+                <li><strong>Primitive</strong>: string, number, boolean, undefined, null, symbol, bigint</li>
+                <li><strong>Object</strong>: object, array, function, date, regexp</li>
+            </ul>
+            <pre><code>let str = "Hello";           // String
+let num = 42;                // Number
+let bool = true;             // Boolean
+let arr = [1, 2, 3];         // Array
+let obj = {name: "John"};    // Object</code></pre>
+            
+            <h3>Operator</h3>
+            <h4>Arithmetic Operators</h4>
+            <pre><code>let a = 10, b = 3;
+console.log(a + b);  // 13 (addition)
+console.log(a - b);  // 7 (subtraction)
+console.log(a * b);  // 30 (multiplication)
+console.log(a / b);  // 3.333... (division)
+console.log(a % b);  // 1 (modulus)
+console.log(a ** b); // 1000 (exponentiation)</code></pre>
+            
+            <h4>Comparison Operators</h4>
+            <pre><code>console.log(5 == "5");   // true (loose equality)
+console.log(5 === "5");  // false (strict equality)
+console.log(5 != "5");   // false
+console.log(5 !== "5");  // true
+console.log(5 > 3);      // true
+console.log(5 >= 5);     // true</code></pre>
+            
+            <h3>Control Flow</h3>
+            <h4>Conditional Statements</h4>
+            <pre><code>if (condition) {
+    // code to execute if condition is true
+} else if (anotherCondition) {
+    // code to execute if anotherCondition is true
+} else {
+    // code to execute if all conditions are false
+}
+
+switch (expression) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // code
+}</code></pre>
+            
+            <h4>Loops</h4>
+            <pre><code>// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// While loop
+let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+
+// For...of loop (for arrays)
+let arr = [1, 2, 3];
+for (let item of arr) {
+    console.log(item);
+}
+
+// For...in loop (for objects)
+let obj = {a: 1, b: 2};
+for (let key in obj) {
+    console.log(key, obj[key]);
+}</code></pre>
+            
+            <h3>Functions</h3>
+            <h4>Function Declaration</h4>
+            <pre><code>function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet("World")); // "Hello, World!"</code></pre>
+            
+            <h4>Function Expression</h4>
+            <pre><code>const greet = function(name) {
+    return `Hello, ${name}!`;
+};</code></pre>
+            
+            <h4>Arrow Functions (ES6)</h4>
+            <pre><code>const greet = (name) => `Hello, ${name}!`;
+const add = (a, b) => a + b;</code></pre>
+            
+            <h3>Objects dan Arrays</h3>
+            <h4>Objects</h4>
+            <pre><code>let person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        return `Hello, I'm ${this.name}`;
+    }
+};
+
+console.log(person.name);     // "John"
+console.log(person.greet());  // "Hello, I'm John"</code></pre>
+            
+            <h4>Arrays</h4>
+            <pre><code>let fruits = ["apple", "banana", "orange"];
+
+console.log(fruits[0]);       // "apple"
+fruits.push("grape");         // Add to end
+fruits.pop();                 // Remove from end
+fruits.forEach(fruit => console.log(fruit));</code></pre>
+            
+            <h3>DOM Manipulation</h3>
+            <p>DOM (Document Object Model) adalah representasi struktur HTML sebagai objek JavaScript.</p>
+            <pre><code>// Selecting elements
+let element = document.getElementById("myId");
+let elements = document.getElementsByClassName("myClass");
+let elements2 = document.querySelectorAll(".myClass");
+
+// Changing content
+element.textContent = "New text";
+element.innerHTML = "&lt;strong&gt;Bold text&lt;/strong&gt;";
+
+// Changing styles
+element.style.color = "red";
+element.style.fontSize = "20px";
+
+// Event handling
+element.addEventListener("click", function() {
+    alert("Element clicked!");
+});</code></pre>
+            
+            <h3>Asynchronous JavaScript</h3>
+            <h4>Callbacks</h4>
+            <pre><code>function fetchData(callback) {
+    setTimeout(() => {
+        callback("Data received");
+    }, 1000);
+}
+
+fetchData(function(data) {
+    console.log(data);
+});</code></pre>
+            
+            <h4>Promises</h4>
+            <pre><code>let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Data received");
+    }, 1000);
+});
+
+promise.then(data => console.log(data));</code></pre>
+            
+            <h4>Async/Await</h4>
+            <pre><code>async function fetchData() {
+    let response = await fetch("https://api.example.com/data");
+    let data = await response.json();
+    return data;
+}
+
+fetchData().then(data => console.log(data));</code></pre>
+            
+            <h3>ES6+ Features</h3>
+            <h4>Destructuring</h4>
+            <pre><code>let [a, b] = [1, 2];
+let {name, age} = {name: "John", age: 30};</code></pre>
+            
+            <h4>Template Literals</h4>
+            <pre><code>let name = "John";
+let greeting = `Hello, ${name}!`;</code></pre>
+            
+            <h4>Spread Operator</h4>
+            <pre><code>let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]</code></pre>
+            
+            <h3>Error Handling</h3>
+            <pre><code>try {
+    // Code that might throw an error
+    let result = riskyOperation();
+} catch (error) {
+    console.error("An error occurred:", error);
+} finally {
+    // Code that always runs
+    cleanup();
+}</code></pre>
+            
+            <h3>Best Practices JavaScript</h3>
+            <ul>
+                <li>Gunakan strict mode: <code>"use strict";</code></li>
+                <li>Prefer const dan let over var</li>
+                <li>Gunakan meaningful variable names</li>
+                <li>Handle errors properly</li>
+                <li>Avoid global variables</li>
+                <li>Use modern ES6+ features</li>
+                <li>Test code thoroughly</li>
+            </ul>
+            
+            <h3>Contoh Interaktivitas JS</h3>
+            <button id="js-button">Klik Saya!</button>
+            <p id="js-output"></p>
+            <div id="js-demo">
+                <input type="text" id="name-input" placeholder="Masukkan nama">
+                <button id="greet-button">Sapa</button>
+                <p id="greeting"></p>
+            </div>
+        </section>
+
+        <section id="php">
+            <h2>Pengenalan Lengkap PHP</h2>
+            <p>PHP (Hypertext Preprocessor) adalah bahasa scripting open-source yang banyak digunakan untuk pengembangan web server-side. PHP dikembangkan oleh Rasmus Lerdorf pada tahun 1994 sebagai kumpulan script Perl untuk melacak pengunjung website. Nama "PHP" awalnya adalah "Personal Home Page", tapi kemudian diubah menjadi "Hypertext Preprocessor" untuk mencerminkan fungsinya yang lebih luas. PHP adalah bahasa yang paling populer untuk backend web development dan merupakan komponen inti dari teknologi seperti WordPress, Laravel, dan banyak CMS lainnya.</p>
+            
+            <h3>Sejarah PHP</h3>
+            <ul>
+                <li><strong>1994</strong>: Rasmus Lerdorf membuat PHP/FI (Personal Home Page/Forms Interpreter)</li>
+                <li><strong>1997</strong>: PHP 3 dirilis dengan dukungan OOP dasar</li>
+                <li><strong>2000</strong>: PHP 4 dengan Zend Engine</li>
+                <li><strong>2004</strong>: PHP 5 dengan OOP yang lebih baik</li>
+                <li><strong>2015</strong>: PHP 7 dengan performa yang sangat meningkat</li>
+                <li><strong>2020</strong>: PHP 8 dengan fitur modern seperti JIT compiler</li>
+            </ul>
+            
+            <h3>Keunggulan PHP</h3>
+            <ul>
+                <li><strong>Mudah Dipelajari</strong>: Syntax yang mirip dengan C/Java</li>
+                <li><strong>Open Source</strong>: Gratis dan komunitas besar</li>
+                <li><strong>Cross-Platform</strong>: Berjalan di Windows, Linux, macOS</li>
+                <li><strong>Database Integration</strong>: Dukungan luas untuk berbagai database</li>
+                <li><strong>Framework Kaya</strong>: Laravel, Symfony, CodeIgniter, dll.</li>
+                <li><strong>Hosting Luas</strong>: Hampir semua hosting web mendukung PHP</li>
+            </ul>
+            
+            <h3>Instalasi dan Setup</h3>
+            <p>Untuk menjalankan PHP, Anda perlu:</p>
+            <ul>
+                <li>Web server (Apache, Nginx)</li>
+                <li>PHP interpreter</li>
+                <li>Database (MySQL, PostgreSQL) - opsional</li>
+            </ul>
+            <p>Pilihan mudah: Install XAMPP (Windows) atau MAMP (macOS) yang menyediakan semua komponen.</p>
+            
+            <h3>Syntax Dasar PHP</h3>
+            <h4>Opening dan Closing Tags</h4>
+            <pre><code>&lt;?php
+// Kode PHP di sini
+?&gt;</code></pre>
+            
+            <h4>Echo dan Print</h4>
+            <pre><code>&lt;?php
+echo "Hello, World!";  // Output: Hello, World!
+print "Hello, PHP!";   // Output: Hello, PHP!
+?&gt;</code></pre>
+            
+            <h3>Variabel dan Tipe Data</h3>
+            <pre><code>&lt;?php
+$name = "John";        // String
+$age = 25;            // Integer
+$price = 19.99;       // Float
+$isStudent = true;    // Boolean
+$fruits = array("apple", "banana"); // Array
+?&gt;</code></pre>
+            
+            <h3>Operator</h3>
+            <h4>Arithmetic Operators</h4>
+            <pre><code>$a = 10;
+$b = 3;
+echo $a + $b;  // 13
+echo $a - $b;  // 7
+echo $a * $b;  // 30
+echo $a / $b;  // 3.333...
+echo $a % $b;  // 1</code></pre>
+            
+            <h4>String Operators</h4>
+            <pre><code>$first = "Hello";
+$second = "World";
+echo $first . " " . $second;  // "Hello World"</code></pre>
+            
+            <h3>Control Structures</h3>
+            <h4>Conditional Statements</h4>
+            <pre><code>if ($age >= 18) {
+    echo "Dewasa";
+} elseif ($age >= 13) {
+    echo "Remaja";
+} else {
+    echo "Anak-anak";
+}</code></pre>
+            
+            <h4>Switch Statement</h4>
+            <pre><code>switch ($grade) {
+    case 'A':
+        echo "Excellent";
+        break;
+    case 'B':
+        echo "Good";
+        break;
+    default:
+        echo "Try again";
+}</code></pre>
+            
+            <h4>Loops</h4>
+            <pre><code>// For loop
+for ($i = 0; $i < 5; $i++) {
+    echo $i . " ";
+}
+
+// While loop
+$i = 0;
+while ($i < 5) {
+    echo $i . " ";
+    $i++;
+}
+
+// Foreach (for arrays)
+$fruits = array("apple", "banana", "orange");
+foreach ($fruits as $fruit) {
+    echo $fruit . " ";
+}</code></pre>
+            
+            <h3>Functions</h3>
+            <pre><code>function greet($name) {
+    return "Hello, " . $name . "!";
+}
+
+echo greet("World");  // Output: Hello, World!</code></pre>
+            
+            <h3>Arrays</h3>
+            <h4>Indexed Arrays</h4>
+            <pre><code>$fruits = array("apple", "banana", "orange");
+echo $fruits[0];  // "apple"
+echo count($fruits);  // 3</code></pre>
+            
+            <h4>Associative Arrays</h4>
+            <pre><code>$person = array(
+    "name" => "John",
+    "age" => 25,
+    "city" => "Jakarta"
+);
+echo $person["name"];  // "John"</code></pre>
+            
+            <h3>Form Handling</h3>
+            <p>PHP sangat powerful untuk menangani form HTML.</p>
+            <pre><code>&lt;!-- HTML Form --&gt;
+&lt;form method="post" action="process.php"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;!-- process.php --&gt;
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    echo "Hello, " . $username;
+}
+?&gt;</code></pre>
+            
+            <h3>Database Connection (MySQL)</h3>
+            <pre><code>&lt;?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Select data
+$sql = "SELECT id, name FROM users";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "ID: " . $row["id"] . " - Name: " . $row["name"] . "&lt;br&gt;";
+    }
+}
+
+$conn->close();
+?&gt;</code></pre>
+            
+            <h3>File Handling</h3>
+            <pre><code>&lt;?php
+// Reading file
+$content = file_get_contents("file.txt");
+echo $content;
+
+// Writing file
+file_put_contents("newfile.txt", "Hello, World!");
+
+// Checking if file exists
+if (file_exists("file.txt")) {
+    echo "File exists";
+}
+?&gt;</code></pre>
+            
+            <h3>Object-Oriented PHP</h3>
+            <pre><code>&lt;?php
+class Car {
+    public $brand;
+    
+    public function __construct($brand) {
+        $this->brand = $brand;
+    }
+    
+    public function getBrand() {
+        return $this->brand;
+    }
+}
+
+$car = new Car("Toyota");
+echo $car->getBrand();  // "Toyota"
+?&gt;</code></pre>
+            
+            <h3>Include dan Require</h3>
+            <pre><code>&lt;!-- header.php --&gt;
+&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;!-- index.php --&gt;
+&lt;?php include 'header.php'; ?&gt;
+&lt;p&gt;Welcome to my website&lt;/p&gt;</code></pre>
+            
+            <h3>Security Best Practices</h3>
+            <ul>
+                <li>Sanitize input data</li>
+                <li>Use prepared statements untuk database queries</li>
+                <li>Validate dan escape output</li>
+                <li>Use HTTPS</li>
+                <li>Update PHP secara berkala</li>
+                <li>Gunakan password hashing (password_hash)</li>
+            </ul>
+            
+            <h3>Framework PHP Populer</h3>
+            <ul>
+                <li><strong>Laravel</strong>: Framework full-stack modern</li>
+                <li><strong>Symfony</strong>: Framework enterprise-grade</li>
+                <li><strong>CodeIgniter</strong>: Framework lightweight</li>
+                <li><strong>Yii</strong>: Framework high-performance</li>
+                <li><strong>CakePHP</strong>: Framework rapid development</li>
+            </ul>
+            
+            <h3>Contoh Aplikasi Lengkap</h3>
+            <pre><code>&lt;?php
+// Simple blog post display
+$posts = array(
+    array("title" => "Post 1", "content" => "Content 1"),
+    array("title" => "Post 2", "content" => "Content 2")
+);
+
+foreach ($posts as $post) {
+    echo "&lt;h2&gt;" . $post["title"] . "&lt;/h2&gt;";
+    echo "&lt;p&gt;" . $post["content"] . "&lt;/p&gt;";
+}
+?&gt;</code></pre>
+            
+            <h3>Contoh Kode PHP</h3>
+            <pre><code>&lt;?php
+echo "Hello, World!";
+?&gt;</code></pre>
+            <p>Kode PHP di atas akan menghasilkan output "Hello, World!" ketika dijalankan di server.</p>
+        </section>
+
+        <section id="developer">
+            <h2>Profil Pengembang</h2>
+            <div class="developer-profile">
+                <div class="developer-info">
+                    <h3>Muhammad Dani Sahputra</h3>
+                    <p><strong>Developer & Programmer</strong></p>
+                    <p>Saya adalah seorang pengembang perangkat lunak yang passionate dalam dunia programming. Saya memiliki pengalaman dalam berbagai bahasa pemrograman termasuk HTML, CSS, JavaScript, PHP, dan C++.</p>
+                    
+                    <h4>Keahlian:</h4>
+                    <ul>
+                        <li>Frontend Development (HTML, CSS, JavaScript)</li>
+                        <li>Backend Development (PHP)</li>
+                        <li>System Programming (C++)</li>
+                        <li>Web Development</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                    
+                    <h4>Pengalaman:</h4>
+                    <ul>
+                        <li>Pengembangan aplikasi web responsif</li>
+                        <li>Pembuatan materi pembelajaran programming</li>
+                        <li>Optimisasi performa aplikasi</li>
+                        <li>Debugging dan troubleshooting</li>
+                    </ul>
+                    
+                    <h4>Kontak:</h4>
+                    <p>Email: <a href="muhammaddanisaputra48@gmail.com" style="color: #00FFFF;">muhammaddanisaputra48@gmail.com</a></p>
+                    <p>GitHub: <a href="https://github.com/kenzodchjandcuh" target="_blank" style="color: #00FFFF;">github.com/kenzodchjandcuh</a></p>
+                    <p>Portfolio: <a href="https://kenzodchjandcuh.github.io/cv/" target="_blank" style="color: #00FFFF;">kenzodchjandcuh.github.io/cv/</a></p>
+                    
+                    <h4>Tentang Materi Ini:</h4>
+                    <p>Materi pembelajaran coding ini dibuat untuk membantu pemula memahami dasar-dasar programming. Materi mencakup penjelasan lengkap tentang HTML, CSS, JavaScript, PHP, dan C++ dengan contoh-contoh praktis yang dapat langsung dicoba.</p>
+                    
+                    <div class="developer-stats">
+                        <div class="stat">
+                            <h4>5+</h4>
+                            <p>Bahasa Pemrograman</p>
+                        </div>
+                        <div class="stat">
+                            <h4>10+</h4>
+                            <p>Proyek Selesai</p>
+                        </div>
+                        <div class="stat">
+                            <h4>2024</h4>
+                            <p>Tahun Mulai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="developer-image">
+                    <img src="https://i.postimg.cc/2yW9Lgt5/Whats-App-Image-2026-02-21-at-10-47-39.jpg" alt="Foto Profil Muhammad Dani Sahputra" class="profile-image">
+                </img>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="https://kenzodchjandcuh.github.io/cv/" target="_blank">Muhammad Dani Sahputra </a>|| Developer</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
