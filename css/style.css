@@ -236,9 +236,160 @@ footer {
     header h1 {
         font-size: 2rem;
     }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    .developer-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .developer-stats {
+        justify-content: center;
+    }
+
+    .profile-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-placeholder span {
+        font-size: 3rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
 }
 
-/* Developer Profile Styles */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section h3 {
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+    }
+
+    .developer-profile {
+        gap: 1rem;
+    }
+
+    .developer-stats {
+        gap: 1rem;
+    }
+
+    .stat {
+        padding: 0.5rem;
+    }
+
+    .stat h4 {
+        font-size: 1.5rem;
+    }
+
+    pre {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .code-example, .css-example {
+        padding: 0.5rem;
+    }
+
+    .profile-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-placeholder span {
+        font-size: 2.5rem;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        max-width: 900px;
+        padding: 0 1.5rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    .developer-profile {
+        gap: 1.5rem;
+    }
+
+    .developer-stats {
+        gap: 1.5rem;
+    }
+
+    .profile-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-placeholder span {
+        font-size: 3.5rem;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    nav a:hover {
+        background-color: transparent;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .styled-button:hover, #js-button:hover, #greet-button:hover {
+        transform: none;
+    }
+
+    .profile-image:hover {
+        transform: none;
+    }
+}
 .developer-profile {
     display: flex;
     gap: 2rem;
